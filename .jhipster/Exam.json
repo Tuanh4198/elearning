@@ -1,0 +1,118 @@
+{
+  "applications": ["yodemy"],
+  "changelogDate": "20240507131500",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityPackage": "elearning",
+  "entityTableName": "exam",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "id"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "255",
+      "fieldValidateRulesMinlength": "1",
+      "javadoc": "title"
+    },
+    {
+      "fieldName": "categoryId",
+      "fieldType": "Long",
+      "javadoc": "Id danh mục"
+    },
+    {
+      "fieldName": "requireJoin",
+      "fieldType": "Boolean",
+      "javadoc": "Kỳ thi bắt buộc"
+    },
+    {
+      "fieldName": "assignStrategy",
+      "fieldType": "ExamQuizzAssignStrategyEnum",
+      "fieldValues": "RANDOM,ALL",
+      "fieldValuesJavadocs": {
+        "RANDOM": "Lấy ngẫu nhiên câu hỏi"
+      },
+      "javadoc": "Chiến thuật giao câu hỏi"
+    },
+    {
+      "fieldName": "assignStrategyJson",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text",
+      "javadoc": "Danh sách đối tượng tham gia, ngăn cách bởi dấu ,"
+    },
+    {
+      "fieldName": "applyTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Thời gian bắt đầu"
+    },
+    {
+      "fieldName": "expireTime",
+      "fieldType": "Instant",
+      "javadoc": "Thời gian kết thúc"
+    },
+    {
+      "fieldName": "pointStrategy",
+      "fieldType": "ExamPointStrategyEnum",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PERCENTAGE",
+      "fieldValuesJavadocs": {
+        "PERCENTAGE": "Phần trăm"
+      },
+      "javadoc": "Cách chấm điểm"
+    },
+    {
+      "fieldName": "minPointToPass",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Điểm tối thiểu cần đạt"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text",
+      "javadoc": "Mô tả"
+    },
+    {
+      "fieldName": "thumbUrl",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text",
+      "javadoc": "Ảnh bìa"
+    },
+    {
+      "fieldName": "courseId",
+      "fieldType": "Long",
+      "javadoc": "Id bài đào tạo"
+    },
+    {
+      "fieldName": "numberOfQuestion",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Tổng số lượng câu hỏi"
+    },
+    {
+      "fieldName": "strategy",
+      "fieldType": "ExamQuizzPoolStrategyEnum",
+      "fieldValues": "WEIGHT,MANUAL",
+      "fieldValuesJavadocs": {
+        "WEIGHT": "Trọng số"
+      },
+      "javadoc": "Chiến thuật chọn pool câu hỏi"
+    }
+  ],
+  "fluentMethods": true,
+  "incrementalChangelog": true,
+  "javadoc": "Kỳ thi",
+  "jpaMetamodelFiltering": false,
+  "name": "Exam",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass",
+  "skipFakeData": true
+}

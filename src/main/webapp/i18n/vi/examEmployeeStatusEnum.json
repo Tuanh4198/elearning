@@ -1,0 +1,10 @@
+{
+  "yodemyApp": {
+    "ExamEmployeeStatusEnum": {
+      "null": "",
+      "NOT_ATTENDED": "NOT_ATTENDED",
+      "PASS": "PASS",
+      "NOT_PASS": "NOT_PASS"
+    }
+  }
+}

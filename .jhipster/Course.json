@@ -1,0 +1,100 @@
+{
+  "applications": ["yodemy"],
+  "changelogDate": "20240507131500",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityPackage": "elearning",
+  "entityTableName": "course",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "id"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "255",
+      "fieldValidateRulesMinlength": "1",
+      "javadoc": "title"
+    },
+    {
+      "fieldName": "categoryId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Id danh mục"
+    },
+    {
+      "fieldName": "requireJoin",
+      "fieldType": "Boolean",
+      "javadoc": "Bắt buộc tham gia"
+    },
+    {
+      "fieldName": "requireAttend",
+      "fieldType": "Boolean",
+      "javadoc": "Yêu cầu điểm danh"
+    },
+    {
+      "fieldName": "meetingUrl",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text",
+      "javadoc": "Phòng đào tạo"
+    },
+    {
+      "fieldName": "examId",
+      "fieldType": "Long",
+      "javadoc": "Id kỳ thi"
+    },
+    {
+      "fieldName": "applyTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Thời gian bắt đầu"
+    },
+    {
+      "fieldName": "expireTime",
+      "fieldType": "Instant",
+      "javadoc": "Thời gian kết thúc"
+    },
+    {
+      "fieldName": "assignStrategy",
+      "fieldType": "AssignStrategyEnum",
+      "fieldValues": "ANY_USERS,SPEC_POSITIONS,SPEC_USERS",
+      "fieldValuesJavadocs": {
+        "ANY_USERS": "Toàn công ty",
+        "SPEC_POSITIONS": "Danh sách nhân viên"
+      },
+      "javadoc": "Đối tượng tham gia"
+    },
+    {
+      "fieldName": "assignStrategyJson",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text",
+      "javadoc": "Danh sách đối tượng tham gia, ngăn cách bởi dấu ,"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text",
+      "javadoc": "Mô tả"
+    },
+    {
+      "fieldName": "thumbUrl",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text",
+      "javadoc": "Ảnh bìa"
+    }
+  ],
+  "fluentMethods": true,
+  "incrementalChangelog": true,
+  "javadoc": "Khóa học",
+  "jpaMetamodelFiltering": false,
+  "name": "Course",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass",
+  "skipFakeData": true
+}

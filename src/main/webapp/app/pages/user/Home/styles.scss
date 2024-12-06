@@ -1,0 +1,80 @@
+.dashboard-block {
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+
+  &.with-bg {
+    overflow: hidden;
+  }
+
+  .day-item {
+    border-radius: 16px;
+    cursor: pointer;
+    position: relative;
+
+    &.active {
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: #12b886;
+        border: 1px solid #ffffff;
+        border-radius: 100%;
+        width: 12px;
+        height: 12px;
+        top: 0;
+        right: 0;
+        z-index: 1;
+      }
+    }
+
+    &:hover {
+      border: 1px solid #1f2a37 !important;
+    }
+  }
+
+  .mantine-Tabs-list {
+    border-radius: 10px;
+    background: #f9fafb;
+    gap: 16px;
+    flex-wrap: nowrap;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .mantine-Tabs-tab {
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    flex: 1;
+    white-space: pre-wrap;
+    text-align: center;
+  }
+
+  .mantine-Accordion-root {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mantine-Accordion-content {
+    padding: 0;
+  }
+}
+
+.highcharts-credits {
+  display: none !important;
+}
+
+.highcharts-legend-item {
+  > span {
+    overflow: unset !important;
+  }
+}
+
+.time-item:hover {
+  > div {
+    background-color: #e6e6ff;
+  }
+}

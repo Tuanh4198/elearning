@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ExamEmployeeResult.
+    -->
+    <changeSet id="20240507131500-1" author="jhipster">
+        <createTable tableName="exam_employee_result" remarks="Kết quả bài thi của user">
+            <column name="id" type="bigint" remarks="id">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="root_id" type="bigint" remarks="Id bài kiểm tra">
+                <constraints nullable="false" />
+            </column>
+            <column name="start_at" type="${datetimeType}" remarks="Thời gian bắt đầu làm bài">
+                <constraints nullable="false" />
+            </column>
+            <column name="finished_at" type="${datetimeType}" remarks="Thời gian nộp bài">
+                <constraints nullable="false" />
+            </column>
+            <column name="number_of_correct" type="bigint" remarks="Tổng số câu đúng">
+                <constraints nullable="false" />
+            </column>
+            <column name="number_of_question" type="bigint" remarks="numberOfQuestion">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="exam_employee_result" columnName="start_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="exam_employee_result" columnName="finished_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+</databaseChangeLog>

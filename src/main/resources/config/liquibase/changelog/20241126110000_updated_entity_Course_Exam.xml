@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity CourseEmployee.
+    -->
+    <changeSet id="20241126000000-1" author="jhipster">
+        <dropColumn tableName="course">
+            <column name="assign_strategy"/>
+            <column name="assign_strategy_json"/>
+        </dropColumn>
+    </changeSet>
+    <changeSet id="20241126000000-2" author="jhipster">
+        <dropColumn tableName="exam">
+            <column name="assign_strategy"/>
+            <column name="assign_strategy_json"/>
+        </dropColumn>
+    </changeSet>
+    <changeSet id="20241126000000-3" author="jhipster">
+        <addColumn tableName="exam">
+            <column name="node_id" type="bigint" remarks="Id node gốc" />
+        </addColumn>
+    </changeSet>
+    <changeSet id="20241126000000-4" author="jhipster">
+        <createIndex tableName="exam" indexName="idx_exam_node_id">
+            <column name="node_id" />
+        </createIndex>
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+</databaseChangeLog>

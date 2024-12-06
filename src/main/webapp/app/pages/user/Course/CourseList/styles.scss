@@ -1,0 +1,25 @@
+.course-in-progress-box {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.course-card-item {
+  border: 1px solid #e5e7eb;
+
+  &:hover {
+    border: 1px solid #2a2a86;
+  }
+}
+
+.course-list-box {
+  .mantine-Chip-label {
+    .mantine-Chip-iconWrapper {
+      display: none !important;
+    }
+
+    > span {
+      display: block;
+      max-width: 100%;
+    }
+  }
+}

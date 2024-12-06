@@ -1,0 +1,56 @@
+{
+  "applications": ["yodemy"],
+  "changelogDate": "20240507131500",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityPackage": "elearning",
+  "entityTableName": "exam_employee_result",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "id"
+    },
+    {
+      "fieldName": "rootId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Id bài kiểm tra"
+    },
+    {
+      "fieldName": "startAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Thời gian bắt đầu làm bài"
+    },
+    {
+      "fieldName": "finishedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Thời gian nộp bài"
+    },
+    {
+      "fieldName": "numberOfCorrect",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Tổng số câu đúng"
+    },
+    {
+      "fieldName": "numberOfQuestion",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "numberOfQuestion"
+    }
+  ],
+  "fluentMethods": true,
+  "incrementalChangelog": true,
+  "javadoc": "Kết quả bài thi của user",
+  "jpaMetamodelFiltering": false,
+  "name": "ExamEmployeeResult",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass",
+  "skipFakeData": true
+}

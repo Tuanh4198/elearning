@@ -1,0 +1,58 @@
+{
+  "applications": ["yodemy"],
+  "changelogDate": "20240507131500",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityPackage": "elearning",
+  "entityTableName": "exam_employee",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "id"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "255",
+      "fieldValidateRulesMinlength": "3",
+      "javadoc": "Mã nhân viên"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "255",
+      "fieldValidateRulesMinlength": "1",
+      "javadoc": "Tên nhân viên"
+    },
+    {
+      "fieldName": "rootId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Id kỳ thi"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "ExamEmployeeStatusEnum",
+      "fieldValues": "NOT_ATTENDED,PASS,NOT_PASS",
+      "fieldValuesJavadocs": {
+        "NOT_ATTENDED": "Chưa tham gia",
+        "PASS": "Chưa đạt"
+      },
+      "javadoc": "status"
+    }
+  ],
+  "fluentMethods": true,
+  "incrementalChangelog": true,
+  "javadoc": "Bài thi của từng user",
+  "jpaMetamodelFiltering": false,
+  "name": "ExamEmployee",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass",
+  "skipFakeData": true
+}

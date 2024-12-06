@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Flow.
+    -->
+    <changeSet id="20240913160000-added-entity-Flow" author="jhipster">
+        <createTable tableName="flow" remarks="Workflow">
+            <column name="id" type="bigint" remarks="Id">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)" remarks="Tên luồng">
+                <constraints nullable="false" />
+            </column>
+            <column name="status" type="varchar(255)" remarks="Trạng thái">
+                <constraints nullable="true" />
+            </column>
+            <column name="type" type="varchar(255)" remarks="Loại câu hỏi">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+    <!--
+        Added the entity Node.
+    -->
+    <changeSet id="20240913160000-added-entity-Node" author="jhipster">
+        <createTable tableName="node" remarks="Tên luồng">
+            <column name="id" type="bigint" remarks="Id">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="flow_id" type="bigint" remarks="Id Flow">
+                <constraints nullable="false" />
+            </column>
+            <column name="root_id" type="bigint" remarks="Id node gốc" />
+            <column name="type" type="varchar(255)" remarks="Loại node">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)" remarks="Trạng thái node">
+                <constraints nullable="true" />
+            </column>
+            <column name="label" type="varchar(255)" remarks="Tên node" />
+            <column name="position_x" type="decimal(10,2)" remarks="Vị trí X">
+                <constraints nullable="true" />
+            </column>
+            <column name="position_y" type="decimal(10,2)" remarks="Vị trí Y">
+                <constraints nullable="true" />
+            </column>
+            <column name="width" type="decimal(10,2)" remarks="Vị trí X">
+                <constraints nullable="true" />
+            </column>
+            <column name="height" type="decimal(10,2)" remarks="Vị trí Y">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+    <!--
+    Added the entity metafield for nodes.
+    -->
+    <changeSet id="20240913160000-added-entity-NodeMetafields" author="jhipster">
+        <createTable tableName="node_metafields" remarks="Node metafields">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="owner_resource" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="owner_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="namespace" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="key" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="longtext"/>
+            <column name="type" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(255)"/>
+            <column name="deleted" type="boolean" defaultValueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="varchar(255)"/>
+            <column name="updated_at" type="timestamp"/>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+</databaseChangeLog>

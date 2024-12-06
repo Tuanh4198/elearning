@@ -1,0 +1,57 @@
+{
+  "applications": ["yodemy"],
+  "changelogDate": "20240507131500",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityPackage": "elearning",
+  "entityTableName": "course_employee",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "id"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "255",
+      "fieldValidateRulesMinlength": "3",
+      "javadoc": "Mã nhân viên"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "255",
+      "fieldValidateRulesMinlength": "1",
+      "javadoc": "Tên nhân viên"
+    },
+    {
+      "fieldName": "rootId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Id khóa học gốc"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "CourseEmployeeStatusEnum",
+      "fieldValues": "ATTENDED,NOT_ATTENDED",
+      "fieldValuesJavadocs": {
+        "ATTENDED": "Đã tham gia"
+      },
+      "javadoc": "status"
+    }
+  ],
+  "fluentMethods": true,
+  "incrementalChangelog": true,
+  "javadoc": "Khóa học giao cho user",
+  "jpaMetamodelFiltering": false,
+  "name": "CourseEmployee",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass",
+  "skipFakeData": true
+}

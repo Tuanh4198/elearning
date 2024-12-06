@@ -1,0 +1,38 @@
+{
+  "applications": ["yodemy"],
+  "changelogDate": "20240507131500",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityPackage": "elearning",
+  "entityTableName": "exam_quizz_pool",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "id"
+    },
+    {
+      "fieldName": "rootId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Id kỳ thi gốc"
+    },
+    {
+      "fieldName": "sourceId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Id nguồn (Id danh mục câu hỏi hoặc id câu hỏi)"
+    }
+  ],
+  "fluentMethods": true,
+  "incrementalChangelog": true,
+  "javadoc": "Pool câu hỏi",
+  "jpaMetamodelFiltering": false,
+  "name": "ExamQuizzPool",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass",
+  "skipFakeData": true
+}

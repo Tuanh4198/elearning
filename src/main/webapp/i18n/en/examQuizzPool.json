@@ -1,0 +1,30 @@
+{
+  "yodemyApp": {
+    "examQuizzPool": {
+      "home": {
+        "title": "Exam Quizz Pools",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Exam Quizz Pool",
+        "createOrEditLabel": "Create or edit a Exam Quizz Pool",
+        "notFound": "No Exam Quizz Pools found"
+      },
+      "created": "A new Exam Quizz Pool is created with identifier {{ param }}",
+      "updated": "A Exam Quizz Pool is updated with identifier {{ param }}",
+      "deleted": "A Exam Quizz Pool is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Exam Quizz Pool {{ id }}?"
+      },
+      "detail": {
+        "title": "Exam Quizz Pool"
+      },
+      "id": "Id",
+      "rootId": "Root Id",
+      "sourceId": "Source Id",
+      "help": {
+        "id": "id",
+        "rootId": "Id kỳ thi gốc",
+        "sourceId": "Id nguồn (Id danh mục câu hỏi hoặc id câu hỏi)"
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "yodemyApp": {
+    "CourseEmployeeStatusEnum": {
+      "null": "",
+      "ATTENDED": "ATTENDED",
+      "NOT_ATTENDED": "NOT_ATTENDED"
+    }
+  }
+}

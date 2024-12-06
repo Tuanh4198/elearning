@@ -1,0 +1,11 @@
+{
+  "yodemyApp": {
+    "QuizzTypeEnum": {
+      "null": "",
+      "ALL": "ALL",
+      "MULTIPLE_CHOICE": "MULTIPLE_CHOICE",
+      "ESSAY": "ESSAY",
+      "BLANK": "BLANK"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "yodemyApp": {
+    "AssignStrategyEnum": {
+      "null": "",
+      "ANY_USERS": "ANY_USERS",
+      "SPEC_POSITIONS": "SPEC_POSITIONS",
+      "SPEC_USERS": "SPEC_USERS"
+    }
+  }
+}

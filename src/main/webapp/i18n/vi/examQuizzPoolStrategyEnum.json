@@ -1,0 +1,9 @@
+{
+  "yodemyApp": {
+    "ExamQuizzPoolStrategyEnum": {
+      "null": "",
+      "WEIGHT": "WEIGHT",
+      "MANUAL": "MANUAL"
+    }
+  }
+}

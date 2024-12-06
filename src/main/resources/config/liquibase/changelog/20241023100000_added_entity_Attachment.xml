@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Attachment.
+    -->
+    <changeSet id="20241023100000-1" author="jhipster">
+        <createTable tableName="attachment">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="source" type="varchar(255)" remarks="source of attachment">
+                <constraints nullable="false" />
+            </column>
+            <column name="url" type="varchar(255)" remarks="url of attachment">
+                <constraints nullable="false" />
+            </column>
+            <column name="attachment_type" type="varchar(255)" remarks="attachment type"/>
+            <column name="attachment_name" type="varchar(255)" remarks="attachment name"/>
+            <column name="created_by" type="varchar(255)" remarks="Actor who created the entity."/>
+            <column name="created_at" type="${datetimeType}" remarks="The date and time when the entity was added."/>
+            <column name="updated_by" type="varchar(255)" remarks="Actor who changed the entity."/>
+            <column name="updated_at" type="${datetimeType}" remarks="The date and time when the entity was last updated."/>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+    <changeSet id="20241023100000-2" author="jhipster">
+        <createIndex tableName="attachment" indexName="idx_attachment_source">
+            <column name="source" />
+        </createIndex>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+</databaseChangeLog>

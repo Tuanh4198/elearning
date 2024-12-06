@@ -1,0 +1,85 @@
+.exam-content-box,
+.exam-description-box {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.modal-take-an-exam {
+  .mantine-Modal-header {
+    display: none;
+  }
+
+  .mantine-Modal-body {
+    padding: 0;
+  }
+
+  .mantine-Paper-root {
+    background: #f6f6f6;
+    overflow: hidden;
+  }
+
+  .header-form {
+    .quizz-action {
+      width: 900px;
+      margin: auto;
+    }
+  }
+
+  .body-form {
+    height: calc(100vh - 135px);
+    overflow-y: scroll;
+    padding-bottom: 40px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+  .quizz-wrapper {
+    width: 900px;
+    position: relative;
+  }
+
+  .quizz-item {
+    border-radius: 16px;
+    border: 2px solid #e5e7eb;
+    background: #fff;
+
+    &.active {
+      border: 2px solid #fab005;
+    }
+
+    .mantine-RadioGroup-root,
+    .mantine-CheckboxGroup-root {
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  }
+}
+
+.modal-confirm-exam {
+  .mantine-Modal-header {
+    display: none;
+  }
+
+  .mantine-Modal-body {
+    padding: 0;
+  }
+
+  .mantine-Text-root {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}

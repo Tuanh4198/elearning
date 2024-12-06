@@ -1,0 +1,34 @@
+{
+  "yodemyApp": {
+    "examEmployee": {
+      "home": {
+        "title": "Exam Employees",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Exam Employee",
+        "createOrEditLabel": "Create or edit a Exam Employee",
+        "notFound": "No Exam Employees found"
+      },
+      "created": "A new Exam Employee is created with identifier {{ param }}",
+      "updated": "A Exam Employee is updated with identifier {{ param }}",
+      "deleted": "A Exam Employee is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Exam Employee {{ id }}?"
+      },
+      "detail": {
+        "title": "Exam Employee"
+      },
+      "id": "Id",
+      "code": "Code",
+      "name": "Name",
+      "rootId": "Root Id",
+      "status": "Status",
+      "help": {
+        "id": "id",
+        "code": "Mã nhân viên",
+        "name": "Tên nhân viên",
+        "rootId": "Id kỳ thi",
+        "status": "status"
+      }
+    }
+  }
+}

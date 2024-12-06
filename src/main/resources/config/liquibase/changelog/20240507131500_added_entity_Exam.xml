@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Exam.
+    -->
+    <changeSet id="20240507131500-1" author="jhipster">
+        <createTable tableName="exam" remarks="Kỳ thi">
+            <column name="id" type="bigint" remarks="id">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="varchar(255)" remarks="title">
+                <constraints nullable="false" />
+            </column>
+            <column name="category_id" type="bigint" remarks="Id danh mục">
+                <constraints nullable="true" />
+            </column>
+            <column name="require_join" type="boolean" remarks="Kỳ thi bắt buộc">
+                <constraints nullable="true" />
+            </column>
+            <column name="assign_strategy" type="varchar(255)" remarks="Chiến thuật giao câu hỏi">
+                <constraints nullable="true" />
+            </column>
+            <column name="assign_strategy_json" type="${clobType}" remarks="Danh sách đối tượng tham gia, ngăn cách bởi dấu ,">
+                <constraints nullable="true" />
+            </column>
+            <column name="apply_time" type="${datetimeType}" remarks="Thời gian bắt đầu">
+                <constraints nullable="false" />
+            </column>
+            <column name="expire_time" type="${datetimeType}" remarks="Thời gian kết thúc">
+                <constraints nullable="true" />
+            </column>
+            <column name="point_strategy" type="varchar(255)" remarks="Cách chấm điểm">
+                <constraints nullable="false" />
+            </column>
+            <column name="min_point_to_pass" type="bigint" remarks="Điểm tối thiểu cần đạt">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="${clobType}" remarks="Mô tả">
+                <constraints nullable="true" />
+            </column>
+            <column name="thumb_url" type="${clobType}" remarks="Ảnh bìa">
+                <constraints nullable="true" />
+            </column>
+            <column name="course_id" type="bigint" remarks="Id bài đào tạo">
+                <constraints nullable="true" />
+            </column>
+            <column name="number_of_question" type="bigint" remarks="Tổng số lượng câu hỏi">
+                <constraints nullable="false" />
+            </column>
+            <column name="strategy" type="varchar(255)" remarks="Chiến thuật chọn pool câu hỏi">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="exam" columnName="apply_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="exam" columnName="expire_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+</databaseChangeLog>

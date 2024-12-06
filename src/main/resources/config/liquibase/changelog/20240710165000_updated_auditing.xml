@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added columns to the entity Training.
+    -->
+    <changeSet id="20240710165000-1" author="jhipster">
+        <addColumn tableName="category">
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <dropDefaultValue tableName="category" columnName="created_at" columnDataType="datetime"/>
+        <dropDefaultValue tableName="category" columnName="updated_at" columnDataType="datetime"/>
+    </changeSet>
+    <changeSet id="20240710165000-2" author="jhipster">
+        <addColumn tableName="course">
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <dropDefaultValue tableName="course" columnName="created_at" columnDataType="datetime"/>
+        <dropDefaultValue tableName="course" columnName="updated_at" columnDataType="datetime"/>
+    </changeSet>
+    <changeSet id="20240710165000-3" author="jhipster">
+        <addColumn tableName="course_employee">
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <dropDefaultValue tableName="course_employee" columnName="created_at" columnDataType="datetime"/>
+        <dropDefaultValue tableName="course_employee" columnName="updated_at" columnDataType="datetime"/>
+    </changeSet>
+    <changeSet id="20240710165000-4" author="jhipster">
+        <addColumn tableName="document">
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <dropDefaultValue tableName="document" columnName="created_at" columnDataType="datetime"/>
+        <dropDefaultValue tableName="document" columnName="updated_at" columnDataType="datetime"/>
+    </changeSet>
+    <changeSet id="20240710165000-5" author="jhipster">
+        <addColumn tableName="exam">
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <dropDefaultValue tableName="exam" columnName="created_at" columnDataType="datetime"/>
+        <dropDefaultValue tableName="exam" columnName="updated_at" columnDataType="datetime"/>
+    </changeSet>
+    <changeSet id="20240710165000-6" author="jhipster">
+        <addColumn tableName="exam_employee">
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <dropDefaultValue tableName="exam_employee" columnName="created_at" columnDataType="datetime"/>
+        <dropDefaultValue tableName="exam_employee" columnName="updated_at" columnDataType="datetime"/>
+    </changeSet>
+    <changeSet id="20240710165000-7" author="jhipster">
+        <addColumn tableName="exam_employee_result">
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <dropDefaultValue tableName="exam_employee_result" columnName="created_at" columnDataType="datetime"/>
+        <dropDefaultValue tableName="exam_employee_result" columnName="updated_at" columnDataType="datetime"/>
+    </changeSet>
+    <changeSet id="20240710165000-8" author="jhipster">
+        <addColumn tableName="exam_quizz_pool">
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <dropDefaultValue tableName="exam_quizz_pool" columnName="created_at" columnDataType="datetime"/>
+        <dropDefaultValue tableName="exam_quizz_pool" columnName="updated_at" columnDataType="datetime"/>
+    </changeSet>
+    <changeSet id="20240710165000-9" author="jhipster">
+        <addColumn tableName="quizz">
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <dropDefaultValue tableName="quizz" columnName="created_at" columnDataType="datetime"/>
+        <dropDefaultValue tableName="quizz" columnName="updated_at" columnDataType="datetime"/>
+    </changeSet>
+    <changeSet id="20240710165000-10" author="jhipster">
+        <addColumn tableName="quizz_answer">
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <dropDefaultValue tableName="quizz_answer" columnName="created_at" columnDataType="datetime"/>
+        <dropDefaultValue tableName="quizz_answer" columnName="updated_at" columnDataType="datetime"/>
+    </changeSet>
+    <changeSet id="20240710165000-11" author="jhipster">
+        <addColumn tableName="quizz_category">
+            <column name="deleted" type="boolean" defaultValue="false"/>
+            <column name="created_by" type="varchar(255)" remarks="Người tạo" defaultValue="system"/>
+            <column name="created_at" type="${datetimeType}" remarks="Ngày tạo" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_by" type="varchar(255)" remarks="Người cập nhật" defaultValue="system"/>
+            <column name="updated_at" type="${datetimeType}" remarks="Ngày cập nhật" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </addColumn>
+        <dropDefaultValue tableName="quizz_category" columnName="created_at" columnDataType="datetime"/>
+        <dropDefaultValue tableName="quizz_category" columnName="updated_at" columnDataType="datetime"/>
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+</databaseChangeLog>

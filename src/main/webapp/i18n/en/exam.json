@@ -1,0 +1,54 @@
+{
+  "yodemyApp": {
+    "exam": {
+      "home": {
+        "title": "Exams",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Exam",
+        "createOrEditLabel": "Create or edit a Exam",
+        "notFound": "No Exams found"
+      },
+      "created": "A new Exam is created with identifier {{ param }}",
+      "updated": "A Exam is updated with identifier {{ param }}",
+      "deleted": "A Exam is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Exam {{ id }}?"
+      },
+      "detail": {
+        "title": "Exam"
+      },
+      "id": "Id",
+      "title": "Title",
+      "categoryId": "Category Id",
+      "requireJoin": "Require Join",
+      "assignStrategy": "Assign Strategy",
+      "assignStrategyJson": "Assign Strategy Json",
+      "applyTime": "Apply Time",
+      "expireTime": "Expire Time",
+      "pointStrategy": "Point Strategy",
+      "minPointToPass": "Min Point To Pass",
+      "description": "Description",
+      "thumbUrl": "Thumb Url",
+      "courseId": "Course Id",
+      "numberOfQuestion": "Number Of Question",
+      "strategy": "Strategy",
+      "help": {
+        "id": "id",
+        "title": "title",
+        "categoryId": "Id danh mục",
+        "requireJoin": "Kỳ thi bắt buộc",
+        "assignStrategy": "Chiến thuật giao câu hỏi",
+        "assignStrategyJson": "Danh sách đối tượng tham gia, ngăn cách bởi dấu ,",
+        "applyTime": "Thời gian bắt đầu",
+        "expireTime": "Thời gian kết thúc",
+        "pointStrategy": "Cách chấm điểm",
+        "minPointToPass": "Điểm tối thiểu cần đạt",
+        "description": "Mô tả",
+        "thumbUrl": "Ảnh bìa",
+        "courseId": "Id bài đào tạo",
+        "numberOfQuestion": "Tổng số lượng câu hỏi",
+        "strategy": "Chiến thuật chọn pool câu hỏi"
+      }
+    }
+  }
+}

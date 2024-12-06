@@ -1,0 +1,50 @@
+{
+  "yodemyApp": {
+    "course": {
+      "home": {
+        "title": "Courses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Course",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Course",
+        "notFound": "No Courses found"
+      },
+      "created": "Một Course mới được tạo với định danh {{ param }}",
+      "updated": "Một Course cập nhật với định danh {{ param }}",
+      "deleted": "Một Course đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Course {{ id }}?"
+      },
+      "detail": {
+        "title": "Course"
+      },
+      "id": "Id",
+      "title": "Title",
+      "categoryId": "Category Id",
+      "requireJoin": "Require Join",
+      "requireAttend": "Require Attend",
+      "meetingUrl": "Meeting Url",
+      "examId": "Exam Id",
+      "applyTime": "Apply Time",
+      "expireTime": "Expire Time",
+      "assignStrategy": "Assign Strategy",
+      "assignStrategyJson": "Assign Strategy Json",
+      "description": "Description",
+      "thumbUrl": "Thumb Url",
+      "help": {
+        "id": "id",
+        "title": "title",
+        "categoryId": "Id danh mục",
+        "requireJoin": "Bắt buộc tham gia",
+        "requireAttend": "Yêu cầu điểm danh",
+        "meetingUrl": "Phòng đào tạo",
+        "examId": "Id kỳ thi",
+        "applyTime": "Thời gian bắt đầu",
+        "expireTime": "Thời gian kết thúc",
+        "assignStrategy": "Đối tượng tham gia",
+        "assignStrategyJson": "Danh sách đối tượng tham gia, ngăn cách bởi dấu ,",
+        "description": "Mô tả",
+        "thumbUrl": "Ảnh bìa"
+      }
+    }
+  }
+}

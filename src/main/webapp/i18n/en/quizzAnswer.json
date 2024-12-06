@@ -1,0 +1,32 @@
+{
+  "yodemyApp": {
+    "quizzAnswer": {
+      "home": {
+        "title": "Quizz Answers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Quizz Answer",
+        "createOrEditLabel": "Create or edit a Quizz Answer",
+        "notFound": "No Quizz Answers found"
+      },
+      "created": "A new Quizz Answer is created with identifier {{ param }}",
+      "updated": "A Quizz Answer is updated with identifier {{ param }}",
+      "deleted": "A Quizz Answer is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Quizz Answer {{ id }}?"
+      },
+      "detail": {
+        "title": "Quizz Answer"
+      },
+      "id": "Id",
+      "rootId": "Root Id",
+      "title": "Title",
+      "content": "Content",
+      "help": {
+        "id": "id",
+        "rootId": "Quizz id",
+        "title": "Tên đáp án",
+        "content": "Nội dung đáp án"
+      }
+    }
+  }
+}

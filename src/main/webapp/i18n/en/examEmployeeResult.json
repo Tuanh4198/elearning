@@ -1,0 +1,36 @@
+{
+  "yodemyApp": {
+    "examEmployeeResult": {
+      "home": {
+        "title": "Exam Employee Results",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Exam Employee Result",
+        "createOrEditLabel": "Create or edit a Exam Employee Result",
+        "notFound": "No Exam Employee Results found"
+      },
+      "created": "A new Exam Employee Result is created with identifier {{ param }}",
+      "updated": "A Exam Employee Result is updated with identifier {{ param }}",
+      "deleted": "A Exam Employee Result is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Exam Employee Result {{ id }}?"
+      },
+      "detail": {
+        "title": "Exam Employee Result"
+      },
+      "id": "Id",
+      "rootId": "Root Id",
+      "startAt": "Start At",
+      "finishedAt": "Finished At",
+      "numberOfCorrect": "Number Of Correct",
+      "numberOfQuestion": "Number Of Question",
+      "help": {
+        "id": "id",
+        "rootId": "Id bài kiểm tra",
+        "startAt": "Thời gian bắt đầu làm bài",
+        "finishedAt": "Thời gian nộp bài",
+        "numberOfCorrect": "Tổng số câu đúng",
+        "numberOfQuestion": "numberOfQuestion"
+      }
+    }
+  }
+}

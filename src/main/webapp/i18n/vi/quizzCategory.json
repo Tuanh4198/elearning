@@ -1,0 +1,30 @@
+{
+  "yodemyApp": {
+    "quizzCategory": {
+      "home": {
+        "title": "Quizz Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Quizz Category",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Quizz Category",
+        "notFound": "No Quizz Categories found"
+      },
+      "created": "Một Quizz Category mới được tạo với định danh {{ param }}",
+      "updated": "Một Quizz Category cập nhật với định danh {{ param }}",
+      "deleted": "Một Quizz Category đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Quizz Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Quizz Category"
+      },
+      "id": "Id",
+      "title": "Title",
+      "description": "Description",
+      "help": {
+        "id": "id",
+        "title": "Title",
+        "description": "Mô tả"
+      }
+    }
+  }
+}

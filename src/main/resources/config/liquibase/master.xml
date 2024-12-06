@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="floatType" value="float4" dbms="postgresql"/>
+    <property name="clobType" value="longvarchar" dbms="postgresql"/>
+    <property name="blobType" value="bytea" dbms="postgresql"/>
+    <property name="uuidType" value="uuid" dbms="postgresql"/>
+    <property name="datetimeType" value="datetime" dbms="postgresql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/00000000000001_initial_nts_helper.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240507131500_added_entity_QuizzCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240507131500_added_entity_Quizz.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240507131500_added_entity_QuizzAnswer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240507131500_added_entity_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240507131500_added_entity_Course.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240507131500_added_entity_CourseEmployee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240507131500_added_entity_Document.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240507131500_added_entity_Exam.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240507131500_added_entity_ExamQuizzPool.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240507131500_added_entity_ExamEmployee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240507131500_added_entity_ExamEmployeeResult.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240710165000_updated_auditing.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240718134000_updated_Exam.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240723161100_updated_ExamEmployeeResult.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240723162000_updated_indexes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240725104000_updated_entity_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240725152900_updated_type_Quizz.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240913160000_added_entity_WorkFlow.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240914132500_added-entity_Edge.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241009110500_added_indexes_Node.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241010162300_added_entity_Rule.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021140200_updated_entity_Rule.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241023100000_added_entity_Attachment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241114091500_updated_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241116140000_updated_entity_Document.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241118100000_updated_entity_Course.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241118132000_updated_entity_Node.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241120130000_updated_entity_Edge.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241120142000_updated_entity_Node.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241121144000_updated_entity_Course.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241123100000_added_entity_DocumentEmployee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241126110000_updated_entity_Course_Exam.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241128114200_updated_entity_DocumentEmployee.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!--
+        Added columns to the entity Training.
+    -->
+    <changeSet id="20240723162000-1" author="jhipster">
+        <createIndex tableName="category" indexName="idx_category_title">
+            <column name="title"/>
+        </createIndex>
+        <createIndex tableName="course" indexName="idx_course_title">
+            <column name="title"/>
+        </createIndex>
+        <createIndex tableName="course" indexName="idx_course_category_id">
+            <column name="category_id"/>
+        </createIndex>
+        <createIndex tableName="course" indexName="idx_course_exam_id">
+            <column name="exam_id"/>
+        </createIndex>
+        <createIndex tableName="course" indexName="idx_course_apply_time">
+            <column name="apply_time"/>
+        </createIndex>
+        <createIndex tableName="course" indexName="idx_course_expire_time">
+            <column name="expire_time"/>
+        </createIndex>
+        <createIndex tableName="course_employee" indexName="idx_course_employee_code">
+            <column name="code"/>
+        </createIndex>
+        <createIndex tableName="course_employee" indexName="idx_course_employee_root_id">
+            <column name="root_id"/>
+        </createIndex>
+        <createIndex tableName="exam" indexName="idx_exam_title">
+            <column name="title"/>
+        </createIndex>
+        <createIndex tableName="exam" indexName="idx_exam_category_id">
+            <column name="category_id"/>
+        </createIndex>
+        <createIndex tableName="exam" indexName="idx_exam_apply_time">
+            <column name="apply_time"/>
+        </createIndex>
+        <createIndex tableName="exam" indexName="idx_exam_expire_time">
+            <column name="expire_time"/>
+        </createIndex>
+        <createIndex tableName="exam" indexName="idx_exam_course_id">
+            <column name="course_id"/>
+        </createIndex>
+        <createIndex tableName="exam_employee" indexName="idx_exam_employee_code">
+            <column name="code"/>
+        </createIndex>
+        <createIndex tableName="exam_employee" indexName="idx_exam_employee_root_id">
+            <column name="root_id"/>
+        </createIndex>
+        <createIndex tableName="exam_employee_result" indexName="idx_exam_employee_result_root_id">
+            <column name="root_id"/>
+        </createIndex>
+        <createIndex tableName="exam_quizz_pool" indexName="idx_exam_quizz_pool_root_id">
+            <column name="root_id"/>
+        </createIndex>
+        <createIndex tableName="quizz" indexName="idx_quizz_category_id">
+            <column name="category_id"/>
+        </createIndex>
+        <createIndex tableName="quizz_answer" indexName="idx_quizz_answer_root_id">
+            <column name="root_id"/>
+        </createIndex>
+        <createIndex tableName="quizz_category" indexName="idx_quizz_category_title">
+            <column name="title"/>
+        </createIndex>
+    </changeSet>
+    <!---->
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+</databaseChangeLog>

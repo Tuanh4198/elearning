@@ -1,0 +1,9 @@
+{
+  "yodemyApp": {
+    "ExamQuizzAssignStrategyEnum": {
+      "null": "",
+      "RANDOM": "RANDOM",
+      "ALL": "ALL"
+    }
+  }
+}

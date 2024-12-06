@@ -1,0 +1,49 @@
+{
+  "applications": ["yodemy"],
+  "changelogDate": "20240507131500",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityPackage": "elearning",
+  "entityTableName": "quizz",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "javadoc": "Id"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "required"],
+      "fieldValidateRulesMinlength": "1",
+      "javadoc": "Nội dung"
+    },
+    {
+      "fieldName": "categoryId",
+      "fieldType": "Long",
+      "javadoc": "Id danh mục"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "QuizzTypeEnum",
+      "fieldValues": "ALL,MULTIPLE_CHOICE,ESSAY,BLANK",
+      "fieldValuesJavadocs": {
+        "ALL": "Tất cả",
+        "ESSAY": "Điền vào chỗ trống",
+        "MULTIPLE_CHOICE": "Tự luận"
+      },
+      "javadoc": "Loại câu hỏi"
+    }
+  ],
+  "fluentMethods": true,
+  "incrementalChangelog": true,
+  "javadoc": "Câu hỏi",
+  "jpaMetamodelFiltering": false,
+  "name": "Quizz",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass",
+  "skipFakeData": true
+}

@@ -1,0 +1,399 @@
+application {
+    config {
+        applicationType monolith
+        authenticationType oauth2
+        baseName yodemy
+        blueprints []
+        buildTool maven
+        cacheProvider redis
+        clientFramework react
+        clientPackageManager npm
+        clientTheme none
+        creationTimestamp 1720159113000
+        databaseType sql
+        devDatabaseType postgresql
+        entitySuffix Entity
+        dtoSuffix DTO
+        enableGradleEnterprise false
+        enableHibernateCache true
+        enableSwaggerCodegen false
+        enableTranslation true
+        gradleEnterpriseHost ""
+        jhiPrefix nts
+        jhipsterVersion "7.9.3"
+        languages [vi, en]
+        messageBroker false
+        microfrontend false
+        microfrontends []
+        nativeLanguage vi
+        otherModules []
+        packageName io.yody.yodemy
+        prodDatabaseType postgresql
+        reactive false
+        searchEngine false
+        serverPort 8080
+        serviceDiscoveryType no
+        skipClient false
+        skipUserManagement true
+        testFrameworks []
+        websocket false
+        withAdminUi false
+    }
+
+    entities *
+    dto * with mapstruct
+    service * with serviceClass
+    paginate * with pagination
+}
+
+/** Danh mục câu hỏi */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity QuizzCategory {
+	/** id */
+    id Long required
+	/** Title */
+    title String minlength(1) maxlength(255) required
+	/** Mô tả */
+    description TextBlob
+}
+
+/** Câu hỏi */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity Quizz {
+	/** Id */
+    id Long required
+	/** Nội dung */
+	content String minlength(1) required
+    /** Id danh mục */
+    categoryId Long
+    /** Loại câu hỏi */
+    type QuizzTypeEnum
+}
+
+/** Đáp án câu hỏi */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity QuizzAnswer {
+	/** id */
+    id Long required
+	/** Quizz id */
+	rootId Long
+    /** Tên đáp án */
+	title String maxlength(255)
+    /** Nội dung đáp án */
+    content String required
+    /*
+    * metafields:
+    * {key: 'is_correct', value: Boolean} : Câu trả lời đúng / sai với câu hỏi trắc nghiệm
+    * {key: 'answer', value: String} : Từ khóa câu trả lời với câu hỏi tự luận
+    */
+}
+
+/** Khóa học */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity Course {
+	/** id */
+    id Long required
+    /** title */
+    title String minlength(1) maxlength(255) required
+    /** Id node gốc */
+    rootId Long required
+    /** Bắt buộc tham gia */
+    requireJoin Boolean
+    /** Yêu cầu điểm danh */
+    requireAttend Boolean
+    /** Phòng đào tạo */
+    meetingUrl TextBlob
+    /** Id kỳ thi */
+    examId Long
+    /** Thời gian bắt đầu */
+    applyTime Instant required
+    /** Thời gian kết thúc */
+    expireTime Instant
+    /** Đối tượng tham gia */
+    assignStrategy AssignStrategyEnum
+    /** Danh sách đối tượng tham gia, ngăn cách bởi dấu , */
+    assignStrategyJson TextBlob
+    /** Mô tả */
+    description TextBlob
+    /** Ảnh bìa */
+    thumbUrl TextBlob
+    /*
+    * metafields
+    * {key: 'minimum_study_time', value: String} : Thời gian học bài tối thiểu
+    */
+}
+
+/** Khóa học giao cho user */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity CourseEmployee {
+	/** id */
+    id Long required
+    /** Mã nhân viên */
+    code String minlength(3) maxlength(255) required
+    /** Tên nhân viên */
+    name String minlength(1) maxlength(255) required
+    /** Id khóa học gốc */
+    rootId Long required
+    /** status */
+    status CourseEmployeeStatusEnum
+}
+
+/** Tài liệu */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity Document {
+	/** id */
+    id Long required
+    /** Id khóa học */
+    rootId Long required
+    /** content */
+    content TextBlob
+}
+
+/** Kỳ thi */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity Exam {
+	/** id */
+    id Long required
+    /** title */
+    title String minlength(1) maxlength(255) required
+    /** Id node gốc */
+    rootId Long required
+    /** Kỳ thi bắt buộc */
+    requireJoin Boolean
+    /** Đối tượng tham gia */
+    assignStrategy AssignStrategyEnum
+    /** Danh sách đối tượng tham gia, ngăn cách bởi dấu , */
+    assignStrategyJson TextBlob
+    /** Thời gian bắt đầu */
+    applyTime Instant required
+    /** Thời gian kết thúc */
+    expireTime Instant
+    /** Cách chấm điểm */
+    pointStrategy ExamPointStrategyEnum required //migrate metafield point_strategy
+    /** Điểm tối thiểu cần đạt */
+    minPointToPass Long required //migrate metafield min_point_to_pass
+    /** Mô tả */
+    description TextBlob
+    /** Ảnh bìa */
+    thumbUrl TextBlob
+    /** Id bài đào tạo */
+    courseId Long
+    /** Tổng số lượng câu hỏi */
+    numberOfQuestion Long required //migrate metafield number_of_question
+    /** Chiến thuật chọn pool câu hỏi */
+    strategy ExamQuizzPoolStrategyEnum //migrate metafield question_source
+    /** Chiến thuật giao câu hỏi */
+    assignStrategy ExamQuizzAssignStrategyEnum //migrate metafield randomize_task
+    /*
+    * metafields
+    * {key: 'working_time', value: String}: Thời gian làm bài (phút)
+	* {key: 'max_number_of_test', value: String}: Số lần làm bài tối đa
+    */
+}
+
+/** Pool câu hỏi */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity ExamQuizzPool {
+	/** id */
+    id Long required
+    /** Id kỳ thi gốc */
+    rootId Long required
+    /** Id nguồn (Id danh mục câu hỏi hoặc id câu hỏi) */
+    sourceId Long required
+    /*
+    * metafield
+    * {key: 'category_weight_value', value: String} Tỉ trọng câu hỏi lấy từ category (nếu chiến thuật là chọn từ category)
+    */
+}
+
+/** Bài thi của từng user */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity ExamEmployee {
+	/** id */
+    id Long required
+    /** Mã nhân viên */
+    code String minlength(3) maxlength(255) required
+    /** Tên nhân viên */
+    name String minlength(1) maxlength(255) required
+    /** Id kỳ thi */
+    rootId Long required
+    /** status */
+    status ExamEmployeeStatusEnum
+}
+
+/** Kết quả bài thi của user */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity ExamEmployeeResult {
+	/** id */
+    id Long required
+    /** Id bài kiểm tra */
+  	rootId Long required
+    /** Thời gian bắt đầu làm bài */
+    startAt Instant required
+    /** Thời gian nộp bài */
+    finishedAt Instant required
+    /** Tổng số câu đúng */
+    numberOfCorrect Long required
+    /** numberOfQuestion */
+    numberOfQuestion Long required //snapshot tổng số lượng câu hỏi khi submit đáp án
+    // cân nhắc lưu minPointToPass
+}
+
+/** flow */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity Flow {
+    /** id */
+    id Long required
+    /** Tên */
+    name String required
+    /** Trạng thái */
+    status FlowStatus required
+}
+
+/** flow */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity Node {
+    /** id */
+    id Long required
+    /** flow id */
+    flowId Long required
+    /** root id */
+    rootId Long required
+    /** type */
+    type NodeType required
+    /** positionX */
+    positionX Long required
+    /** positionY */
+    positionY Long required
+    /** label */
+    label String required
+    /** width */
+    width Long required
+    /** height */
+    height Long required
+}
+
+/** flow */
+@entityPackage(elearning)
+@skipFakeData
+@changelogDate(20240507131500)
+entity Edge {
+    /** id */
+    id Long required
+    /** sourceId */
+    source Long required
+    /** targetId */
+    target Long required
+    /** type */
+    type EdgeType required
+}
+
+enum EdgeType {
+    Bezier, //default
+    Straight, //straight
+    Step, //step
+    SmoothStep, //smoothstep
+    SimpleBezier //simplebezier
+}
+
+enum NodeType {
+    /** Container */
+    CONTAINER,
+    /** Root */
+    ROOT
+    /** Hải trình */
+    SEA_MAP
+    /** Vùng biển */
+    SEA_REGION
+    /** Quần đảo */
+    ISLAND_AREA
+    /** Đảo */
+    ISLAND
+    /** Quái */
+    CREEP
+
+}
+enum FlowStatus {
+    /** Đang chạy */
+    ACTIVE,
+    /** Đã dừng */
+    INACTIVE
+}
+
+enum ExamEmployeeStatusEnum {
+	/** Chưa tham gia */
+	NOT_ATTENDED
+    /** Đạt */
+    PASS
+    /** Chưa đạt */
+    NOT_PASS
+}
+
+enum ExamQuizzAssignStrategyEnum { //migrate metaffield randomize_task
+	/** Lấy ngẫu nhiên câu hỏi */
+    RANDOM
+    /** Tất cả bài thi câu hỏi giống nhau */
+    ALL
+}
+
+enum ExamQuizzPoolStrategyEnum {
+	/** Trọng số */
+    WEIGHT //migrate metafield category_weight_id map với category_weight_value theo thứ tự
+    /** Tự chọn câu hỏi */
+    MANUAL //migrate danh sách câu hỏi
+}
+
+enum ExamPointStrategyEnum {
+	/** Phần trăm */
+    PERCENTAGE
+}
+enum CourseEmployeeStatusEnum {
+	/** Đã tham gia */
+	ATTENDED
+    /** Chưa tham gia */
+    NOT_ATTENDED
+}
+
+enum AssignStrategyEnum {
+	/** Toàn công ty */
+	ANY_USERS
+    /** Vị trí làm việc */
+    SPEC_POSITIONS
+    /** Danh sách nhân viên */
+	SPEC_USERS
+}
+
+enum QuizzTypeEnum {
+	/** Tất cả */
+	ALL
+    /** Trắc nghiệm */
+    MULTIPLE_CHOICE
+    /** Tự luận */
+    ESSAY
+    /** Điền vào chỗ trống */
+    BLANK
+}

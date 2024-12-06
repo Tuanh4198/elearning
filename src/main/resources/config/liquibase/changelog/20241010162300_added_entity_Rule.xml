@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Rule.
+    -->
+    <changeSet id="20241010162300-1" author="jhipster">
+        <createTable tableName="rule" remarks="Rule engine">
+            <column name="id" type="bigint" remarks="Id">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="namespace" type="varchar(255)" remarks="Tên namespace">
+                <constraints nullable="false" />
+            </column>
+            <column name="condition" type="text" remarks="Rule">
+                <constraints nullable="false" />
+            </column>
+            <column name="action" type="text" remarks="Hành động">
+                <constraints nullable="false" />
+            </column>
+            <column name="priority" type="bigint" remarks="Độ ưu tiên">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="text" remarks="Mô tả">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted" type="boolean" defaultValueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="varchar(255)"/>
+            <column name="updated_at" type="timestamp"/>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+    <changeSet id="20241010162300-2" author="jhipster">
+        <createIndex tableName="rule" indexName="idx_rule_namespace">
+            <column name="namespace" />
+        </createIndex>
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+</databaseChangeLog>

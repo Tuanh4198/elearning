@@ -1,0 +1,9 @@
+export enum NodeType {
+  ROOT = 'ROOT',
+  CONTAINER = 'CONTAINER',
+  SEA_MAP = 'SEA_MAP',
+  SEA_REGION = 'SEA_REGION',
+  ISLAND_AREA = 'ISLAND_AREA',
+  ISLAND = 'ISLAND',
+  CREEP = 'CREEP',
+}

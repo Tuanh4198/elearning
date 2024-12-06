@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added columns to the entity Training.
+    -->
+    <changeSet id="20240723161100-1" author="jhipster">
+        <addColumn tableName="exam_employee_result">
+            <column name="is_pass" type="boolean" defaultValue="false" remarks="Đạt hay không đạt" />
+            <column name="min_point_to_pass" type="bigint" remarks="Đạt hay không đạt" />
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>
